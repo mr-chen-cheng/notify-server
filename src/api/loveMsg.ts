@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 import { getTian } from '../utils/http'
 
 /**
@@ -13,26 +13,28 @@ enum LoveMsgURL {
   topNews = 'http://api.tianapi.com/topnews/index',
   // 最美宋词
   songLyrics = 'http://api.tianapi.com/zmsc/index',
-  // 每日一句美好英语
-  dayEnglish = 'http://api.tianapi.com/everyday/index',
+  // 唐诗
+  tangshi = 'http://api.tianapi.com/poetries/index',
+  // 每日一句生活小技巧
+  dayEnglish = 'http://api.tianapi.com/qiaomen/index',
   // 韩寒主编的ONE一个杂志，本接口返回每日一句
-  oneMagazines = 'http://api.tianapi.com/one/index',
+  // oneMagazines = 'http://api.tianapi.com/one/index',
   // 故事大全
   storybook = 'http://api.tianapi.com/story/index',
-  // 网易云热评
-  netEaseCloud = 'http://api.tianapi.com/hotreview/index',
+  // 脑筋急转弯
+  netEaseCloud = 'http://api.tianapi.com/naowan/index',
   // 获取农历信息
   lunarDate = 'http://api.tianapi.com/lunar/index',
   // 土味情话
-  saylove = 'http://api.tianapi.com/saylove/index',
+  // saylove = 'http://api.tianapi.com/saylove/index',
   // 彩虹屁
   caihongpi = 'http://api.tianapi.com/caihongpi/index',
   // 励志古言
-  inspirationalWord = 'http://api.tianapi.com/lzmy/index',
+  // inspirationalWord = 'http://api.tianapi.com/lzmy/index',
   // 笑话
-  joke = 'http://api.tianapi.com/joke/index',
+  // joke = 'http://api.tianapi.com/joke/index',
   // 一言
-  oneWord = 'https://v1.hitokoto.cn/?encode=json',
+  // oneWord = 'https://v1.hitokoto.cn/?encode=json',
 }
 
 class API {
@@ -73,18 +75,23 @@ class API {
     const res = await getTian<IVerseProps[]>({ url: LoveMsgURL.songLyrics })
     return res?.[0]
   }
+    // 最美唐诗
+  async getTangShi() {
+    const res = await getTian<TangshiProps[]>({ url: LoveMsgURL.tangshi })
+    return res?.[0]
+  }
 
-  // 每日一句美好英语
+  // 每日一句生活小技巧
   async getDayEnglish() {
     const res = await getTian<ResEnglishProps[]>({ url: LoveMsgURL.dayEnglish })
     return res?.[0]
   }
 
-  // one一个杂志
-  async getOneMagazines() {
-    const res = await getTian<OneMagazines[]>({ url: LoveMsgURL.oneMagazines })
-    return res?.[0]
-  }
+  // // one一个杂志
+  // async getOneMagazines() {
+  //   const res = await getTian<OneMagazines[]>({ url: LoveMsgURL.oneMagazines })
+  //   return res?.[0]
+  // }
 
   // 故事大全
   async getStorybook() {
@@ -92,7 +99,7 @@ class API {
     return res?.[0]
   }
 
-  // 网易云热评
+  // 脑筋急转弯
   async getNetEaseCloud() {
     const res = await getTian<NetEaseCloudProps[]>({ url: LoveMsgURL.netEaseCloud })
     return res?.[0]
@@ -105,10 +112,10 @@ class API {
   }
 
   // 土味情话
-  async getSaylove() {
-    const res = await getTian<SayloveProps[]>({ url: LoveMsgURL.saylove })
-    return res?.[0]
-  }
+  // async getSaylove() {
+  //   const res = await getTian<SayloveProps[]>({ url: LoveMsgURL.saylove })
+  //   return res?.[0]
+  // }
 
   // 彩虹屁
   async getCaihongpi() {
@@ -117,21 +124,21 @@ class API {
   }
 
   // 雷人笑话
-  async getJoke(num = 6) {
-    const res = await getTian<JokeProps[]>({ url: LoveMsgURL.joke, params: { num } })
-    return res
-  }
+  // async getJoke(num = 6) {
+  //   const res = await getTian<JokeProps[]>({ url: LoveMsgURL.joke, params: { num } })
+  //   return res
+  // }
 
   // 一言
-  async getOneWord(): Promise<OneWordProps | null> {
-    try {
-      const response = await axios(LoveMsgURL.oneWord, { timeout: 30000 })
-      return response.data
-    } catch (error) {
-      console.log(error)
-      return null
-    }
-  }
+  // async getOneWord(): Promise<OneWordProps | null> {
+  //   try {
+  //     const response = await axios(LoveMsgURL.oneWord, { timeout: 30000 })
+  //     return response.data
+  //   } catch (error) {
+  //     console.log(error)
+  //     return null
+  //   }
+  // }
 }
 
 export default new API()

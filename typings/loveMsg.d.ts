@@ -40,7 +40,18 @@ interface IVerseProps {
   /** 天行数据接口 名称 */
   source: string
 }
-
+interface TangshiProps {
+  /** 长安白日照春空，绿杨结烟垂袅风。 */
+  content: string
+  /** 阳春歌 */
+  title: string
+  /** 李白 */
+  author: string
+  /** 古诗文-天气-太阳 */
+  category: string
+  /** 天行数据接口 名称 */
+  source: string
+}
 // 每日简报
 interface DailyBriefing {
   mtime: string
@@ -84,12 +95,12 @@ interface ResEnglishProps {
 }
 
 // 韩寒主编的ONE一个杂志，本接口返回每日一句
-interface OneMagazines {
-  word: string
-  wordfrom: string
-  imgurl: string
-  note: string
-}
+// interface OneMagazines {
+//   word: string
+//   wordfrom: string
+//   imgurl: string
+//   note: string
+// }
 
 // 故事大全
 interface StorybookProps {
@@ -97,7 +108,7 @@ interface StorybookProps {
   content: string
 }
 
-// 网易云热评
+// 脑筋急转弯
 interface NetEaseCloudProps {
   source: string
   content: string
@@ -153,7 +164,8 @@ type TextTemplateProps = {
   caiHongpi: SayloveProps | null
   oneWord: OneWordProps | null
   songLyrics: IVerseProps | null
-  oneMagazines: OneMagazines | null
+  tangshi: TangshiProps | null
+  // oneMagazines: OneMagazines | null
   netEaseCloud: NetEaseCloudProps | null
   dayEnglish: ResEnglishProps | null
 }
