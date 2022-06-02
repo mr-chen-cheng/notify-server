@@ -8,7 +8,7 @@ import { goodAfternoon } from './goodAfternoon'
 import { goodEvening } from './goodEvening'
 dotenv.config()
 
-// const { MESSAGE_TYPE } = process.env
+const { MESSAGE_TYPE } = process.env
 export default function main() {
   goodMorning()
   // const date = new Date()
@@ -19,16 +19,16 @@ export default function main() {
   // } else {
   //   goodEvening()
   // }
-  // if (MESSAGE_TYPE === 'goodAfternoon') {
-  //   // 午安
-  //   goodAfternoon()
-  // }
-  // else if (MESSAGE_TYPE === 'goodEvening') {
-  //   // 晚安
-  //   goodEvening()
-  // }
-  // else {
-  //   // 早安
-  //   goodMorning()
-  // }
+  if (MESSAGE_TYPE === 'goodAfternoon') {
+    // 午安
+    goodAfternoon()
+  }
+  else if (MESSAGE_TYPE === 'goodEvening') {
+    // 晚安
+    goodEvening()
+  }
+  else {
+    // 早安
+    goodMorning()
+  }
 }
