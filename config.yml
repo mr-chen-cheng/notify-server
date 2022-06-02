@@ -5,11 +5,11 @@ loveMsg:
   # 与女朋友相识的日子
   start_stamp: 2022-06-02
   # 女朋友所在城市（不要带‘市’）
-  city_name: 东莞
+  city_name: 咸宁
   # 对女朋友的爱称
-  girl_name: 沃德
+  girl_name: 老妹
   # 对自己的称呼
-  boy_name: 哈喽
+  boy_name: 老哥
   # 点击卡片详情地址
   card_url: https://api.vvhan.com/api/60s
   # 天气生活指数提示（默认开启）
