@@ -13,14 +13,14 @@ export const textTemplate = (data: TextTemplateProps) => {
   // 工作日/休息日，需要排除节假日
   const week = weekToday()
   if (['星期六', '星期日'].includes(week)) {
-    text += `
-如果你已经起床啦！我向你说早安呦~，记得吃早饭呀😆\n
-嗯哼哼~今天可是${week}哦，上班别迟到了哦~`
-  }
-  else {
-    text += `
-如果我还没起床呀！我就等着你起床给我说早安呦🤣
-嗯哼~，既然今天是${week}，就让你再睡会懒觉~下次可不能啦~😝\n`
+        text += `
+    如果你已经起床啦！我向你说早安呦~，记得吃早饭呀😆\n
+    嗯哼哼~今天可是${week}哦，上班别迟到了哦~`
+      // }
+      // else {
+        text += `
+    如果我还没起床呀！我就等着你起床给我说早安呦🤣
+    嗯哼~，既然今天是${week}，就让你再睡会懒觉~下次可不能啦~😝\n`
   }
 
   // 添加笑话
@@ -36,14 +36,14 @@ ${caiHongpi.content}\n`
 // ${sayLove.content}\n`
 //   }
 
-  // 诗句
+  // 宋词
   if (songLyrics) {
-    text += `
+    text += ` 宋词
 『${songLyrics.source}』${songLyrics.content}\n`
   }
   // 唐诗
   if (tangshi) {
-    text += `
+    text += ` 唐诗
 『${tangshi.title}--${tangshi.author}』${tangshi.content}\n`
   }
 //   if (oneMagazines) {
@@ -53,7 +53,7 @@ ${caiHongpi.content}\n`
 
   if (netEaseCloud) {
     text += `
-『脑筋急转弯』${netEaseCloud.content}——${netEaseCloud.source}\n`
+『脑筋急转弯』${netEaseCloud.quest}——${netEaseCloud.result}\n`
   }
 
   // 添加一句一言

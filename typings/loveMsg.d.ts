@@ -28,18 +28,6 @@ interface IWeatherResponseProps {
   tips: string
 }
 
-interface IVerseProps {
-  /** 长安白日照春空，绿杨结烟垂袅风。 */
-  content: string
-  /** 阳春歌 */
-  origin: string
-  /** 李白 */
-  author: string
-  /** 古诗文-天气-太阳 */
-  category: string
-  /** 天行数据接口 名称 */
-  source: string
-}
 interface TangshiProps {
   /** 长安白日照春空，绿杨结烟垂袅风。 */
   content: string
@@ -47,10 +35,6 @@ interface TangshiProps {
   title: string
   /** 李白 */
   author: string
-  /** 古诗文-天气-太阳 */
-  category: string
-  /** 天行数据接口 名称 */
-  source: string
 }
 // 每日简报
 interface DailyBriefing {
@@ -76,22 +60,13 @@ interface TodayHeadlines {
 interface IVerseProps {
   /** 长安白日照春空，绿杨结烟垂袅风。 */
   content: string
-  /** 阳春歌 */
-  origin: string
-  /** 李白 */
-  author: string
-  /** 古诗文-天气-太阳 */
-  category: string
   /** 天行数据接口 名称 */
   source: string
 }
 
-// 每日一句好英语
+// 生活小技巧
 interface ResEnglishProps {
   content: string
-  note: string
-  imgurl: string
-  date: string
 }
 
 // 韩寒主编的ONE一个杂志，本接口返回每日一句
@@ -110,8 +85,8 @@ interface StorybookProps {
 
 // 脑筋急转弯
 interface NetEaseCloudProps {
-  source: string
-  content: string
+  quest: string
+  result: string
 }
 
 // 获取农历信息
