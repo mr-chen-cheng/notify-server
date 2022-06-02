@@ -13,14 +13,14 @@ export const textTemplate = (data: TextTemplateProps) => {
   // 工作日/休息日，需要排除节假日
   const week = weekToday()
   if (['星期六', '星期日'].includes(week)) {
-        text += `
-    如果你已经起床啦！我向你说早安呦~，记得吃早饭呀😆\n
-    嗯哼哼~今天可是${week}哦，上班别迟到了哦~`
-      // }
-      // else {
-        text += `
+    text += `
     如果我还没起床呀！我就等着你起床给我说早安呦🤣
     嗯哼~，既然今天是${week}，就让你再睡会懒觉~下次可不能啦~😝\n`
+      }
+      else {
+    text += `
+    如果你已经起床啦！我向你说早安呦~，记得吃早饭呀😆\n
+    嗯哼哼~今天可是${week}哦，美好的一天开始了~`
   }
 
   // 添加笑话
@@ -38,13 +38,13 @@ ${caiHongpi.content}\n`
 
   // 宋词
   if (songLyrics) {
-    text += ` 宋词
-『${songLyrics.source}』${songLyrics.content}\n`
+    text += ` <宋词>
+『${songLyrics.source}』\n${songLyrics.content}\n`
   }
   // 唐诗
   if (tangshi) {
-    text += ` 唐诗
-『${tangshi.title}--${tangshi.author}』${tangshi.content}\n`
+    text += ` <唐诗>
+『${tangshi.title}--${tangshi.author}』\n${tangshi.content.replace(/(\u3002)/g,'$1\n')}\n`
   }
 //   if (oneMagazines) {
 //     text += `
@@ -65,7 +65,7 @@ ${caiHongpi.content}\n`
   // 『生活小技巧』
   if (dayEnglish) {
     text += `
-      『生活小技巧』--${dayEnglish.content}`
+『生活小技巧』--${dayEnglish.content}`
   }
 
   return {
