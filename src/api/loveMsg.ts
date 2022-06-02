@@ -75,9 +75,13 @@ class API {
     const res = await getTian<IVerseProps[]>({ url: LoveMsgURL.songLyrics })
     return res?.[0]
   }
-    // 最美唐诗
+  // 最美唐诗
   async getTangShi() {
-    const res = await getTian<TangshiProps[]>({ url: LoveMsgURL.tangshi })
+    const res = await getTian<TangshiProps[]>({
+      url: LoveMsgURL.tangshi, params: {
+        num: 1, page: 1
+      }
+    })
     return res?.[0]
   }
 
@@ -101,7 +105,7 @@ class API {
 
   // 脑筋急转弯
   async getNetEaseCloud() {
-    const res = await getTian<NetEaseCloudProps[]>({ url: LoveMsgURL.netEaseCloud })
+    const res = await getTian<NetEaseCloudProps[]>({ url: LoveMsgURL.netEaseCloud, params: { num:1}})
     return res?.[0]
   }
 
