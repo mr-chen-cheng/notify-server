@@ -82,7 +82,7 @@ class API {
         num: 1, page: 1
       }
     })
-    console.log(res)
+    // console.log(res)
     
     return res?.[0]
   }
