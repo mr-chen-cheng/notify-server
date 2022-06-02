@@ -26,7 +26,7 @@ const goodWord = async () => {
     ])
 
     // 过滤掉异常数据
-    const [sayLove, caiHongpi, songLyrics, netEaseCloud, dayEnglish] =
+    const [sayLove, caiHongpi, songLyrics, tangshi, netEaseCloud, dayEnglish] =
       dataSource.map((n) => (n.status === 'fulfilled' ? n.value : null))
 
     // 对象写法
@@ -35,7 +35,7 @@ const goodWord = async () => {
       caiHongpi,
       // oneWord,
       songLyrics,
-      getTangShi,
+      tangshi,
       // oneMagazines,
       netEaseCloud,
       dayEnglish,
