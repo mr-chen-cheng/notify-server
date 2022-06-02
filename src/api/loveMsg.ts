@@ -35,6 +35,7 @@ enum LoveMsgURL {
   // joke = 'http://api.tianapi.com/joke/index',
   // 一言
   // oneWord = 'https://v1.hitokoto.cn/?encode=json',
+  tiangou = 'http://api.tianapi.com/tiangou/index'
 }
 
 class API {
