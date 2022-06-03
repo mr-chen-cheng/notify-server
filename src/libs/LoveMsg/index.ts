@@ -10,7 +10,7 @@ dotenv.config()
 
 const { MESSAGE_TYPE } = process.env
 export default function main() {
-  goodMorning()
+  // goodMorning()
   // const date = new Date()
   // if (date.getHours() >= 6 && date.getHours() < 12) {
   //   goodMorning()
@@ -27,7 +27,7 @@ export default function main() {
     // 晚安
     goodEvening()
   }
-  else {
+  else if (MESSAGE_TYPE === 'goodMorning') {
     // 早安
     goodMorning()
   }
