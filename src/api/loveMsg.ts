@@ -14,7 +14,8 @@ enum LoveMsgURL {
   // 最美宋词
   songLyrics = 'http://api.tianapi.com/zmsc/index',
   // 唐诗
-  tangshi = 'http://api.tianapi.com/poetries/index',
+  // tangshi = 'http://api.tianapi.com/poetries/index',
+  tangshi = 'http://api.tianapi.com/songci/index',
   // 每日一句生活小技巧
   dayEnglish = 'http://api.tianapi.com/qiaomen/index',
   // 韩寒主编的ONE一个杂志，本接口返回每日一句
