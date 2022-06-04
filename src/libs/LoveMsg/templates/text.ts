@@ -28,7 +28,7 @@ export const textTemplate = (data: TextTemplateProps) => {
     //     text += `
     // 彩虹屁：
     text += `
-彩虹屁：${caiHongpi.content}`
+${caiHongpi.content}`
   }
 
   // 『生活小技巧』
