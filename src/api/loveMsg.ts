@@ -36,7 +36,7 @@ enum LoveMsgURL {
   // joke = 'http://api.tianapi.com/joke/index',
   // 一言
   // oneWord = 'https://v1.hitokoto.cn/?encode=json',
-  tiangou = 'http://api.tianapi.com/tiangou/index'
+  tiangou = 'http://api.tianapi.com/tiangou/index',
 }
 
 class API {
@@ -78,13 +78,8 @@ class API {
   }
   // 最美唐诗
   async getTangShi() {
-    const res = await getTian<TangshiProps[]>({
-      url: LoveMsgURL.tangshi, params: {
-        num: 1, page: 1
-      }
-    })
+    const res = await getTian<TangshiProps[]>({url: LoveMsgURL.tangshi,params: {num: 1,page: 1,},})
     // console.log(res)
-    
     return res?.[0]
   }
 
@@ -108,7 +103,10 @@ class API {
 
   // 脑筋急转弯
   async getNetEaseCloud() {
-    const res = await getTian<NetEaseCloudProps[]>({ url: LoveMsgURL.netEaseCloud, params: { num:1}})
+    const res = await getTian<NetEaseCloudProps[]>({
+      url: LoveMsgURL.netEaseCloud,
+      params: { num: 1 },
+    })
     return res?.[0]
   }
 

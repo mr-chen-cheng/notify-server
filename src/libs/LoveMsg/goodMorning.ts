@@ -34,24 +34,36 @@ const goodWord = async () => {
       // sayLove,
       caiHongpi,
       // oneWord,
-      songLyrics,
-      tangshi,
+      // songLyrics,
+      // tangshi,
       // oneMagazines,
       netEaseCloud,
       dayEnglish,
     }
+    const data2: any = {
+      // sayLove,
+      // caiHongpi,
+      // oneWord,
+      songLyrics,
+      tangshi,
+      // oneMagazines,
+      // netEaseCloud,
+      // dayEnglish,
+    }
 
     const template = textTemplate(data)
     console.log('goodWord', template)
-
     wxNotify(template)
+    const template2 = textTemplate(data2)
+    console.log('goodWord', template2)
+    wxNotify(template2)
   } catch (error) {
     console.log('goodWord:err', error)
   }
 }
 
 // 天气信息
-const weatherInfo = async () => {
+const weatherInfo = async() => {
   try {
     const weather = await API.getWeather(CONFIG.city_name)
     if (weather) {
@@ -62,7 +74,8 @@ const weatherInfo = async () => {
       // 发送消息
       await wxNotify(template)
     }
-  } catch (error) {
+  }
+  catch (error) {
     console.log('weatherInfo:err', error)
   }
 }

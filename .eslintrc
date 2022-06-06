@@ -1,9 +1,16 @@
 {
   "extends": ["prettier", "@antfu"],
   "rules": {
-    "no-console": "warn",
+    "no-console": "off",
     "brace-style": "warn",
-    "space-before-function-paren": "warn",
+        "space-before-function-paren": [
+          "warn",
+          {
+            "anonymous": "always",
+            "named": "always",
+            "asyncArrow": "always"
+          }
+        ],
     "arrow-parens": "warn",
     "operator-linebreak": "warn"
   }

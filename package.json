@@ -19,7 +19,7 @@
     "url": "git+https://github.com/JS-banana/node-ts.git"
   },
   "license": "MIT",
-  "author": "JS-banana <sss213018@163.com>",
+  "author": "chencheng",
   "sideEffects": false,
   "exports": {
     ".": {
