@@ -20,7 +20,7 @@ export const textTemplate = (data: TextTemplateProps) => {
 
   // 工作日/休息日，需要排除节假日
   const date = new Date()
-  const week: any = date.getDay()
+  const week: number = date.getDay()
   if ([0, 6].includes(week)) {
     text += `
     如果我还没起床呀！我就等着你起床给我说早安呦🤣
