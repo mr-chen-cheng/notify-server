@@ -18,7 +18,7 @@ export const textTemplate = (data: TextTemplateProps) => {
   let text = ''
   // 彩虹屁：
   if (caiHongpi) {
-    let text = '早安呀！！！~'
+    text = '早安呀！！！~'
 
     // 工作日/休息日，需要排除节假日
     const date = new Date()
@@ -38,27 +38,21 @@ export const textTemplate = (data: TextTemplateProps) => {
   }
 
   // 『生活小技巧』
-  if (dayEnglish) {
-    text += `
-『生活小技巧』--${dayEnglish.content}`
-  }
-  if (netEaseCloud) {
-    text += `
-『脑筋急转弯』${netEaseCloud.quest}——${netEaseCloud.result}`
-  }
+  if (dayEnglish)
+    text += `『生活小技巧』--${dayEnglish.content}`
+
+  if (netEaseCloud)
+    text += `『脑筋急转弯』${netEaseCloud.quest}——${netEaseCloud.result}`
+
   // 宋词
-  if (songLyrics) {
-    text += `
-『${songLyrics.source}』\n${songLyrics.content}`
-  }
-  if (tangshi_songci) {
-    text += `
-『${tangshi_songci.title}--${tangshi_songci.author}』\n${tangshi_songci.content.replace(/(\u3002)/g, '$1\n')}`
-  }
-  if (tangshi) {
-    text += `
-『${tangshi.title}--${tangshi.author}』\n${tangshi.content.replace(/(\u3002)/g, '$1\n')}`
-  }
+  if (songLyrics)
+    text += `『${songLyrics.source}』\n${songLyrics.content}`
+
+  if (tangshi_songci)
+    text += `『${tangshi_songci.title}--${tangshi_songci.author}』\n${tangshi_songci.content.replace(/(\u3002)/g, '$1\n')}`
+
+  if (tangshi)
+    text += `『${tangshi.title}--${tangshi.author}』\n${tangshi.content.replace(/(\u3002)/g, '$1\n')}`
 
   return {
     msgtype: 'text',
