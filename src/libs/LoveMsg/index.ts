@@ -17,10 +17,10 @@ export default function main() {
     if (date.getHours() >= 6 && date.getHours() < 10)
       goodMorning()
 
-    else if (date.getHours() >= 12 && date.getHours() < 18)
+    else if (date.getHours() >= 12 && date.getHours() <= 14)
       goodAfternoon()
 
-    else if (date.getHours() >= 22 && date.getHours() < 24)
+    else if (date.getHours() >= 21 && date.getHours() < 24)
       goodEvening()
   }
 

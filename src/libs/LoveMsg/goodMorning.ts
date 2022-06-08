@@ -44,14 +44,11 @@ const goodWord = async () => {
     }
 
     const template = textTemplate(data)
-    console.log('goodWord', template)
-    wxNotify(template)
     const template1 = textTemplate(data1)
     const template2 = textTemplate(data2)
-    setTimeout(() => {
-      wxNotify(template1)
-      wxNotify(template2)
-    }, 0)
+    await wxNotify(template)
+    await wxNotify(template1)
+    await wxNotify(template2)
   }
   catch (error) {
     console.log('goodWord:err', error)
