@@ -29,7 +29,7 @@ export const textTemplate = (data: TextTemplateProps) => {
   else {
     text += `
     如果你已经起床啦！我向你说早安呦~，记得吃早饭呀😆
-    嗯哼哼~今天可是${weekMap[week]}}哦，美好的一天开始了~`
+    嗯哼哼~今天可是${weekMap[week]}哦，美好的一天开始了~`
   }
 
   // 彩虹屁：
