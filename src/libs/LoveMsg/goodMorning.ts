@@ -34,20 +34,13 @@ const goodWord = async () => {
     }
     // 对象写法
     const data1: any = {
-      caiHongpi,
       netEaseCloud,
       dayEnglish,
     }
     const data2: any = {
-      // sayLove,
-      // caiHongpi,
-      // oneWord,
       songLyrics,
       tangshi,
       tangshi_songci,
-      // oneMagazines,
-      // netEaseCloud,
-      // dayEnglish,
     }
 
     const template = textTemplate(data)

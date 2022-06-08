@@ -18,7 +18,7 @@ export const textTemplate = (data: TextTemplateProps) => {
   let text = ''
   // 彩虹屁：
   if (caiHongpi) {
-    text = '早安呀！！！~'
+    text += '早安呀！！！~'
 
     // 工作日/休息日，需要排除节假日
     const date = new Date()
@@ -34,7 +34,7 @@ export const textTemplate = (data: TextTemplateProps) => {
     嗯哼哼~今天可是${weekMap[week]}哦，美好的一天开始了~`
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    text += `${caiHongpi.content}`
+    text += `\n${caiHongpi.content}`
   }
 
   // 『生活小技巧』
