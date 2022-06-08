@@ -42,14 +42,14 @@ export const textTemplate = (data: TextTemplateProps) => {
     text += `『生活小技巧』--${dayEnglish.content}`
 
   if (netEaseCloud)
-    text += `『脑筋急转弯』${netEaseCloud.quest}——${netEaseCloud.result}`
+    text += `『脑筋急转弯』--${netEaseCloud.quest}——${netEaseCloud.result}`
 
   // 宋词
   if (songLyrics)
-    text += `『${songLyrics.source}』\n${songLyrics.content}`
+    text += `『${songLyrics.source}』\n${songLyrics.content}\n`
 
   if (tangshi_songci)
-    text += `『${tangshi_songci.title}--${tangshi_songci.author}』\n${tangshi_songci.content.replace(/(\u3002)/g, '$1\n')}`
+    text += `『${tangshi_songci.title}--${tangshi_songci.author}』\n${tangshi_songci.content}`
 
   if (tangshi)
     text += `『${tangshi.title}--${tangshi.author}』\n${tangshi.content.replace(/(\u3002)/g, '$1\n')}`
