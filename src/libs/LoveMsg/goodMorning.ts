@@ -27,17 +27,14 @@ const goodWord = async () => {
     ])
 
     // 过滤掉异常数据
-    const [caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish] =
-      dataSource.map((n) => (n.status === 'fulfilled' ? n.value : null))
-
-    // 对象写法
+    const [caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish]
+      = dataSource.map(n => (n.status === 'fulfilled' ? n.value : null))
     const data: any = {
-      // sayLove,
       caiHongpi,
-      // oneWord,
-      // songLyrics,
-      // tangshi,
-      // oneMagazines,
+    }
+    // 对象写法
+    const data1: any = {
+      caiHongpi,
       netEaseCloud,
       dayEnglish,
     }
@@ -56,16 +53,20 @@ const goodWord = async () => {
     const template = textTemplate(data)
     console.log('goodWord', template)
     wxNotify(template)
+    const template1 = textTemplate(data1)
+    console.log('goodWord', template1)
+    wxNotify(template1)
     const template2 = textTemplate(data2)
     console.log('goodWord', template2)
     wxNotify(template2)
-  } catch (error) {
+  }
+  catch (error) {
     console.log('goodWord:err', error)
   }
 }
 
 // 天气信息
-const weatherInfo = async() => {
+const weatherInfo = async () => {
   try {
     const weather = await API.getWeather(CONFIG.city_name)
     if (weather) {

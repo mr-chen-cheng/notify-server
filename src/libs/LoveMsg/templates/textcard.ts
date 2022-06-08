@@ -97,7 +97,7 @@ ${CONFIG.girl_name}可要注意保暖哦~\n`
       //   url: 'https://api.lovelive.tools/api/SweetNothings',
       //   url: 'https://v1.jinrishici.com/all.svg',
       url: `${CONFIG.card_url}`, // 60s看世界
-      btntxt: `新闻简报`,
+      btntxt: '新闻简报',
     },
   }
 }

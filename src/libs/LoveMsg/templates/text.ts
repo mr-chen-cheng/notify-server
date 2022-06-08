@@ -15,29 +15,26 @@ const weekMap: any = {
 
 export const textTemplate = (data: TextTemplateProps) => {
   const { caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish } = data
-
-  let text = '早安呀！！！~'
-
-  // 工作日/休息日，需要排除节假日
-  const date = new Date()
-  const week: number = date.getDay()
-  if ([0, 6].includes(week)) {
-    text += `
-    如果我还没起床呀！我就等着你起床给我说早安呦🤣
-    嗯哼~，既然今天是${weekMap[week]}，就让你再睡会懒觉~下次可不能啦~😝`
-  }
-  else {
-    text += `
-    如果你已经起床啦！我向你说早安呦~，记得吃早饭呀😆
-    嗯哼哼~今天可是${weekMap[week]}哦，美好的一天开始了~`
-  }
-
+  let text = ''
   // 彩虹屁：
   if (caiHongpi) {
-    //     text += `
-    // 彩虹屁：
-    text += `
-${caiHongpi.content}`
+    let text = '早安呀！！！~'
+
+    // 工作日/休息日，需要排除节假日
+    const date = new Date()
+    const week: number = date.getDay()
+    if ([0, 6].includes(week)) {
+      text += `
+    如果我还没起床呀！我就等着你起床给我说早安呦🤣
+    嗯哼~，既然今天是${weekMap[week]}，就让你再睡会懒觉~下次可不能啦~😝`
+    }
+    else {
+      text += `
+    如果你已经起床啦！我向你说早安呦~，记得吃早饭呀😆
+    嗯哼哼~今天可是${weekMap[week]}哦，美好的一天开始了~`
+    }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    text += `${caiHongpi.content}`
   }
 
   // 『生活小技巧』
@@ -54,12 +51,10 @@ ${caiHongpi.content}`
     text += `
 『${songLyrics.source}』\n${songLyrics.content}`
   }
-  // 宋词
   if (tangshi_songci) {
     text += `
 『${tangshi_songci.title}--${tangshi_songci.author}』\n${tangshi_songci.content.replace(/(\u3002)/g, '$1\n')}`
   }
-  // 唐诗
   if (tangshi) {
     text += `
 『${tangshi.title}--${tangshi.author}』\n${tangshi.content.replace(/(\u3002)/g, '$1\n')}`
