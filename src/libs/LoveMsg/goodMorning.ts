@@ -19,6 +19,7 @@ const goodWord = async () => {
       API.getCaihongpi(), // 彩虹屁
       // API.getOneWord(), // 一言
       API.getSongLyrics(), // 最美宋词
+      API.gettangshi_songci(), // 最美唐诗
       API.getTangShi(), // 最美唐诗
       // API.getOneMagazines(), // one杂志
       API.getNetEaseCloud(), // 脑筋急转弯
@@ -26,7 +27,7 @@ const goodWord = async () => {
     ])
 
     // 过滤掉异常数据
-    const [caiHongpi, songLyrics, tangshi, netEaseCloud, dayEnglish] =
+    const [caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish] =
       dataSource.map((n) => (n.status === 'fulfilled' ? n.value : null))
 
     // 对象写法
@@ -46,6 +47,7 @@ const goodWord = async () => {
       // oneWord,
       songLyrics,
       tangshi,
+      tangshi_songci,
       // oneMagazines,
       // netEaseCloud,
       // dayEnglish,

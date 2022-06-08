@@ -28,6 +28,14 @@ interface IWeatherResponseProps {
   tips: string
 }
 
+interface tangshi_songciProps {
+  /** 长安白日照春空，绿杨结烟垂袅风。 */
+  content: string
+  /** 阳春歌 */
+  title: string
+  /** 李白 */
+  author: string
+}
 interface TangshiProps {
   /** 长安白日照春空，绿杨结烟垂袅风。 */
   content: string
@@ -140,6 +148,7 @@ type TextTemplateProps = {
   oneWord: OneWordProps | null
   songLyrics: IVerseProps | null
   tangshi: TangshiProps | null
+  tangshi_songci: tangshi_songciProps | null
   // oneMagazines: OneMagazines | null
   netEaseCloud: NetEaseCloudProps | null
   dayEnglish: ResEnglishProps | null

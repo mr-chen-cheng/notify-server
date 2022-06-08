@@ -14,7 +14,7 @@ const weekMap: any = {
 }
 
 export const textTemplate = (data: TextTemplateProps) => {
-  const { caiHongpi, songLyrics, tangshi, netEaseCloud, dayEnglish } = data
+  const { caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish } = data
 
   let text = '早安呀！！！~'
 
@@ -54,25 +54,16 @@ ${caiHongpi.content}`
     text += `
 『${songLyrics.source}』\n${songLyrics.content}`
   }
+  // 宋词
+  if (tangshi_songci) {
+    text += `
+『${tangshi_songci.title}--${tangshi_songci.author}』\n${tangshi_songci.content.replace(/(\u3002)/g, '$1\n')}`
+  }
   // 唐诗
   if (tangshi) {
     text += `
-『${tangshi.title}--${tangshi.author}』\n${tangshi.content.replace(/(\u3002)/g,'$1\n')}`
+『${tangshi.title}--${tangshi.author}』\n${tangshi.content.replace(/(\u3002)/g, '$1\n')}`
   }
-//   if (oneMagazines) {
-//     text += `
-// 『ONE杂志』${oneMagazines.word}\n`
-//   }
-
-
-
-  // 添加一句一言
-//   if (oneWord) {
-//     text += `
-// 『一言』${oneWord.hitokoto}\n`
-//   }
-
-
 
   return {
     msgtype: 'text',

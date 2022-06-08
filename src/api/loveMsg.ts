@@ -14,10 +14,10 @@ enum LoveMsgURL {
   // 最美宋词
   songLyrics = 'http://api.tianapi.com/zmsc/index',
   // 唐诗
-  // tangshi = 'http://api.tianapi.com/poetries/index',
-  tangshi = 'http://api.tianapi.com/songci/index',
+  tangshi = 'http://api.tianapi.com/poetries/index',
+  tangshi_songci = 'http://api.tianapi.com/songci/index', // 宋词
   // 每日一句生活小技巧
-  dayEnglish = 'http://api.tianapi.com/qiaomen/index',
+  dayEnglish = 'http://api.tianapi.com/qiaomen/index', // 小窍门
   // 韩寒主编的ONE一个杂志，本接口返回每日一句
   // oneMagazines = 'http://api.tianapi.com/one/index',
   // 故事大全
@@ -26,7 +26,7 @@ enum LoveMsgURL {
   netEaseCloud = 'http://api.tianapi.com/naowan/index',
   // 获取农历信息
   lunarDate = 'http://api.tianapi.com/lunar/index',
-  // 土味情话
+  //
   // saylove = 'http://api.tianapi.com/saylove/index',
   // 彩虹屁
   caihongpi = 'http://api.tianapi.com/caihongpi/index',
@@ -38,7 +38,9 @@ enum LoveMsgURL {
   // oneWord = 'https://v1.hitokoto.cn/?encode=json',
   tiangou = 'http://api.tianapi.com/tiangou/index',
 }
-
+function randomPage() { // 随机数 1-40000
+  return Math.ceil(Math.random() * 40000)
+}
 class API {
   key: string
   constructor(key?: string) {
@@ -76,9 +78,17 @@ class API {
     const res = await getTian<IVerseProps[]>({ url: LoveMsgURL.songLyrics })
     return res?.[0]
   }
+
   // 最美唐诗
   async getTangShi() {
-    const res = await getTian<TangshiProps[]>({url: LoveMsgURL.tangshi,params: {num: 1,page: 1,},})
+    const res = await getTian<TangshiProps[]>({ url: LoveMsgURL.tangshi, params: { num: 1, page: randomPage() } })
+    // console.log(res)
+    return res?.[0]
+  }
+
+  // 最美唐诗
+  async gettangshi_songci() {
+    const res = await getTian<tangshi_songciProps[]>({ url: LoveMsgURL.tangshi_songci, params: { num: 1, page: randomPage() } })
     // console.log(res)
     return res?.[0]
   }
@@ -116,34 +126,11 @@ class API {
     return res?.[0]
   }
 
-  // 土味情话
-  // async getSaylove() {
-  //   const res = await getTian<SayloveProps[]>({ url: LoveMsgURL.saylove })
-  //   return res?.[0]
-  // }
-
   // 彩虹屁
   async getCaihongpi() {
     const res = await getTian<SayloveProps[]>({ url: LoveMsgURL.caihongpi })
     return res?.[0]
   }
-
-  // 雷人笑话
-  // async getJoke(num = 6) {
-  //   const res = await getTian<JokeProps[]>({ url: LoveMsgURL.joke, params: { num } })
-  //   return res
-  // }
-
-  // 一言
-  // async getOneWord(): Promise<OneWordProps | null> {
-  //   try {
-  //     const response = await axios(LoveMsgURL.oneWord, { timeout: 30000 })
-  //     return response.data
-  //   } catch (error) {
-  //     console.log(error)
-  //     return null
-  //   }
-  // }
 }
 
 export default new API()
