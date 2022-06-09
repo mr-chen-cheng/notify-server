@@ -39,17 +39,17 @@ export const textTemplate = (data: TextTemplateProps) => {
 
   // 『生活小技巧』
   if (dayEnglish)
-    text += `『生活小技巧』--${dayEnglish.content}`
+    text += `『生活小技巧』--${dayEnglish.content}\n`
 
   if (netEaseCloud)
     text += `『脑筋急转弯』--${netEaseCloud.quest}——${netEaseCloud.result}`
 
   // 宋词
   if (songLyrics)
-    text += `『${songLyrics.source}』\n${songLyrics.content}\n`
+    text += `『${songLyrics.source}』\n${songLyrics.content}\n `
 
   if (tangshi_songci)
-    text += `『${tangshi_songci.title}--${tangshi_songci.author}』\n${tangshi_songci.content}`
+    text += `『${tangshi_songci.title}--${tangshi_songci.author}』${tangshi_songci.content}\n`
 
   if (tangshi)
     text += `『${tangshi.title}--${tangshi.author}』\n${tangshi.content.replace(/(\u3002)/g, '$1\n')}`
