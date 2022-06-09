@@ -12,17 +12,17 @@ const { MESSAGE_TYPE } = process.env
 console.log(MESSAGE_TYPE)
 export default function main() {
   // goodMorning()
-  const date = new Date()
-  if (!MESSAGE_TYPE) {
-    if (date.getHours() >= 6 && date.getHours() < 10)
-      goodMorning()
+  // const date = new Date()
+  // if (!MESSAGE_TYPE) {
+  //   if (date.getHours() >= 6 && date.getHours() < 10)
+  //     goodMorning()
 
-    else if (date.getHours() >= 12 && date.getHours() <= 14)
-      goodAfternoon()
+  //   else if (date.getHours() >= 12 && date.getHours() <= 14)
+  //     goodAfternoon()
 
-    else if (date.getHours() >= 21 && date.getHours() < 24)
-      goodEvening()
-  }
+  //   else if (date.getHours() >= 21 && date.getHours() < 24)
+  //     goodEvening()
+  // }
 
   if (MESSAGE_TYPE === 'goodAfternoon') {
     // 午安

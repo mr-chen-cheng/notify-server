@@ -46,13 +46,13 @@ export const textTemplate = (data: TextTemplateProps) => {
 
   // 宋词
   if (songLyrics)
-    text += `『${songLyrics.source}』\n${songLyrics.content}\n `
+    text += `宋词\n『${songLyrics.source}』\n${songLyrics.content}\n `
 
   if (tangshi_songci)
-    text += `『${tangshi_songci.title}--${tangshi_songci.author}』${tangshi_songci.content}\n`
+    text += ` 『${tangshi_songci.author}《${tangshi_songci.title}》』${tangshi_songci.content}\n`
 
   if (tangshi)
-    text += `『${tangshi.title}--${tangshi.author}』\n${tangshi.content.replace(/(\u3002)/g, '$1\n')}`
+    text += `唐诗\n 『${tangshi.author}《${tangshi.title}》』\n${tangshi.content.replace(/(\u3002)/g, '$1\n')}`
 
   return {
     msgtype: 'text',
