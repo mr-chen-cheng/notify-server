@@ -46,7 +46,7 @@ export const textTemplate = (data: TextTemplateProps) => {
 
   // 宋词
   if (songLyrics)
-    text += `宋词\n『${songLyrics.source}』\n${songLyrics.content}\n `
+    text += `宋词\n 『${songLyrics.source}』\n${songLyrics.content}\n `
 
   if (tangshi_songci)
     text += ` 『${tangshi_songci.author}《${tangshi_songci.title}》』${tangshi_songci.content}\n`
