@@ -84,8 +84,7 @@ ${CONFIG.girl_name}可要注意保暖哦~\n`
   //   }
 
   // 内容末尾，自定义
-  description += `
-  [ 点我有惊喜 ] ❤️ 🧡 💛 💚 💖`
+  // description += ` `
 
   const title = `这是我们相识的第 ${dateLength} 天`
 
@@ -96,8 +95,8 @@ ${CONFIG.girl_name}可要注意保暖哦~\n`
       description,
       //   url: 'https://api.lovelive.tools/api/SweetNothings',
       //   url: 'https://v1.jinrishici.com/all.svg',
-      url: `${CONFIG.card_url}`, // 60s看世界
-      btntxt: '新闻简报',
+      // url: `${CONFIG.card_url}`, // 60s看世界
+      // btntxt: '新闻简报',
     },
   }
 }
