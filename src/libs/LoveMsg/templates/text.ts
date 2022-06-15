@@ -16,13 +16,11 @@ const weekMap: any = {
 export const textTemplate = (data: TextTemplateProps) => {
   const { caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish } = data
   let text = ''
-  // 彩虹屁：
   if (caiHongpi) {
     text += '早安呀！！！~'
 
     // 工作日/休息日，需要排除节假日
-    const date = new Date()
-    const week: number = date.getDay()
+    const week: number = new Date().getDay()
     if ([0, 6].includes(week)) {
       text += `
     如果我还没起床呀！我就等着你起床给我说早安呦🤣

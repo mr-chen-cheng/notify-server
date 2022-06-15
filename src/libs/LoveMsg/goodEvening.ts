@@ -89,8 +89,17 @@ const getStory = async () => {
 ${res.content}`,
     },
   }
-
+  let template2 = {}
+  if (res.content.length > 650) {
+    template2 = {
+      msgtype: 'text',
+      text: {
+        content: `${res.content.substring(650)}`,
+      },
+    }
+  }
   await wxNotify(template)
+  res.content.length > 650 && await wxNotify(template2)
 }
 
 // 执行函数
