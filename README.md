@@ -44,12 +44,6 @@
 
 ## 效果
 
-<!-- ![wx_love-1](https://cdn.jsdelivr.net/gh/JS-banana/images/vuepress/wx_love-1.png) -->
-
-<!-- <p align="center"><img width="500" src="/images/weixin.jpg" alt="weixin"></p> -->
-
-<!-- <p align="center"><img width="500" src="/images/preview-1.jpg" alt="preview-1"></p> -->
-
 ```txt
 星河耿耿，不如你眼眸璀璨，晚风习习，不如你温柔绮丽。
 
@@ -74,7 +68,7 @@
 
 天行数据：<https://www.tianapi.com/>
 
-- 会员免费接口数量：**15个**
+- 会员免费接口数量：**10个**
 - 每日赠送次数：**100次**
 
 注：如果采取该接口，需要在 **添加环境变量**这一步中，再添加`Key`的变量值`TIAN_API_KEY`，作为天行数据接口使用时的必填参数
@@ -123,31 +117,19 @@ TIAN_API_KEY= 天行数据 key
 
 注册成功后，点「管理企业」进入管理界面，选择「应用管理」 → 「自建」 → 「创建应用」
 
-![创建应用-1](images/qiyewx-2.png)
-
 应用名称随意填，可见范围选择公司名（或指定组织、个人，建议选择全部，然后在代码里指定用户）。
-
-![创建应用-2](images/qiyewx-3.png)
 
 指定成员或组织
 
-![指定范围](images/qiyewx-3-2.png)
-
 创建完成后进入应用详情页，可以得到应用 ID( agentid )①，应用 Secret( secret )②。
-
-![创建应用-3](/images/qiyewx-3-1.png)
 
 #### 第三步，获取企业 ID
 
 进入「[我的企业](https://work.weixin.qq.com/wework_admin/frame#profile)」页面，拉到最下边，可以得到企业 ID③。
 
-![企业ID](images/qiyewx-6.png)
-
 #### 第四步，推送消息到微信
 
 进入「我的企业」 → 「[微信插件](https://work.weixin.qq.com/wework_admin/frame#profile/wxPlugin)」，拉到下边扫描二维码，关注以后即可收到推送的消息。
-
-![第四步](images/qiyewx-4.png)
 
 #### 无法接收到消息的异常情况处理
 
@@ -155,11 +137,7 @@ PS：如果出现`接口请求正常，企业微信接受消息正常，个人�
 
 1. 进入「我的企业」 → 「微信插件」，拉到最下方，勾选 “允许成员在微信插件中接收和回复聊天消息”
 
-    ![异常情况-1](images/qiyewx-5.jpg)
-
 2. 在企业微信客户端 「我」 → 「设置」 → 「新消息通知」中关闭 “仅在企业微信中接受消息” 限制条件
-
-    ![异常情况-2](images/qiyewx-5-1.jpg)
 
 </details>
 
@@ -200,8 +178,6 @@ PS：如果出现`接口请求正常，企业微信接受消息正常，个人�
 ### GitHub部署
 
 如果要通过 `GitHub Action`使用，需要在 `Secrets` 中一一添加变量,脚本会自动运行，当然，你也可以根据自身需求调整，见 `.github/workflows/goodMorning.yml`
-
-![secrets](/images/secrets.png)
 
 GitHub Action每天7:30自动执行，脚本配置如下：[ci.yml](https://github.com/JS-banana/notify-server/blob/master/.github/workflows/goodMorning.yml)
 
