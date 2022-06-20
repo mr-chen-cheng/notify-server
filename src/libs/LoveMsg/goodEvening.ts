@@ -79,27 +79,27 @@ import { wxNotify } from '../WxNotify'
 
 // 获今日取故事
 const getStory = async () => {
-  const res = await API.getStorybook()
-  const template = {
-    msgtype: 'text',
-    text: {
-      content: `今日份睡前故事来喽：
-🌑🌒🌓🌔🌕🌝😛\n
-『${res.title}』
-${res.content}`,
-    },
-  }
-  let template2 = {}
-  if (res.content.length > 650) {
-    template2 = {
-      msgtype: 'text',
-      text: {
-        content: `${res.content.substring(650)}`,
-      },
-    }
-  }
-  await wxNotify(template)
-  res.content.length > 650 && await wxNotify(template2)
+  //   const res = await API.getStorybook()
+  //   const template = {
+  //     msgtype: 'text',
+  //     text: {
+  //       content: `今日份睡前故事来喽：
+  // 🌑🌒🌓🌔🌕🌝😛\n
+  // 『${res.title}』
+  // ${res.content}`,
+  //     },
+  //   }
+  //   let template2 = {}
+  //   if (res.content.length > 650) {
+  //     template2 = {
+  //       msgtype: 'text',
+  //       text: {
+  //         content: `${res.content.substring(650)}`,
+  //       },
+  //     }
+  //   }
+  await wxNotify({ msgtype: 'text', texct: { content: '没话说' } })
+  // res.content.length > 650 && await wxNotify(template2)
 }
 
 // 执行函数
