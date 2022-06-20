@@ -23,7 +23,7 @@ export const textTemplate = (data: TextTemplateProps) => {
   const { caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish, zaoan, oneWord } = data
   let text = ''
   if (zaoan)
-    text += `${zaoan.content}\n`
+    text += `${zaoan.content}`
 
   if (caiHongpi) {
     // 工作日/休息日，需要排除节假日

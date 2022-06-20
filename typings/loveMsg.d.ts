@@ -161,8 +161,8 @@ interface OneWordProps {
  */
 // goodMorning
 type TextCardTemplateProps = IWeatherResponseProps & {
-  // lunarInfo: ResLunarDateProps
-  oneWord?: OneWordProps | null
+  lunarInfo: ResLunarDateProps
+  // oneWord?: OneWordProps | null
 }
 
 // goodMorning
