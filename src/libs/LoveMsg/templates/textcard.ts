@@ -28,7 +28,6 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
     pop,
     pcpn,
     tips,
-    lunarInfo,
   } = data
 
   // 今日、恋爱天数

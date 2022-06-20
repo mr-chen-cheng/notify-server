@@ -1,12 +1,8 @@
 // 定义天气返回值类型
 interface IWeatherResponseProps {
-  /** 2021-12-18 */
   date: string
-  /** 星期六 */
   week: string
-  /** 蚌埠 */
   area: string
-  /** 晴 */
   weather: string
   /** 西南风 */
   wind: string
@@ -165,7 +161,7 @@ interface OneWordProps {
  */
 // goodMorning
 type TextCardTemplateProps = IWeatherResponseProps & {
-  lunarInfo: ResLunarDateProps
+  // lunarInfo: ResLunarDateProps
   oneWord?: OneWordProps | null
 }
 
