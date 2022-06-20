@@ -5,7 +5,7 @@
 import API from '../../api/eveningMsg'
 import { wxNotify } from '../WxNotify'
 // import { newsTemplate } from './templates/news'
-import { textTemplate } from './templates/text'
+import { textTemplate } from './templates/evening'
 const getStory = async () => {
   try {
     const dataSource = await Promise.allSettled([

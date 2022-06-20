@@ -20,12 +20,11 @@ if (curHours > 15) {
   console.log(date.getDay())
 }
 export const textTemplate = (data: TextTemplateProps) => {
-  const { caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish, zaoan } = data
+  const { caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish, zaoan, oneWord } = data
   let text = ''
-  if (zaoan) {
-    text += `
-${zaoan.content}\n`
-  }
+  if (zaoan)
+    text += `${zaoan.content}\n`
+
   if (caiHongpi) {
     // 工作日/休息日，需要排除节假日
     if ([0, 6].includes(date.getDay())) {
@@ -41,7 +40,9 @@ ${zaoan.content}\n`
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     text += `\n${caiHongpi.content}`
   }
-
+  // 添加一句一言
+  if (oneWord)
+    text += `『一言』${oneWord.hitokoto}\n`
   // 『生活小技巧』
   if (dayEnglish)
     text += `『生活小技巧』--${dayEnglish.content}\n`

@@ -22,14 +22,16 @@ const goodWord = async () => {
       API.getNetEaseCloud(), // 脑筋急转弯
       API.getDayEnglish(), // 每日英语
       API.getZaoan(),
+      API.getOneWord(),
     ])
 
     // 过滤掉异常数据
-    const [caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish, zaoan]
+    const [caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish, zaoan, oneWord]
       = dataSource.map(n => (n.status === 'fulfilled' ? n.value : null))
     const data: any = {
       caiHongpi,
       zaoan,
+      oneWord,
     }
     // 对象写法
     const data1: any = {

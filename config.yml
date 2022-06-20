@@ -18,4 +18,4 @@ loveMsg:
   # 卡片内容字节限制可能显示不完全
   weather_tem: true
   # 农历信息（默认开启）
-  date_lunarInfo: true
+  date_lunarInfo: false

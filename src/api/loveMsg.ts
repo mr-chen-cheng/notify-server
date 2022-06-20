@@ -35,7 +35,7 @@ enum LoveMsgURL {
   // 笑话
   // joke = 'http://api.tianapi.com/joke/index',
   // 一言
-  // oneWord = 'https://v1.hitokoto.cn/?encode=json',
+  oneWord = 'https://v1.hitokoto.cn/?encode=json',
   tiangou = 'http://api.tianapi.com/tiangou/index',
   zaoan = 'http://api.tianapi.com/zaoan/index'
 }
@@ -129,6 +129,12 @@ class API {
 
   async getZaoan() {
     const res = await getTian2<zaoanProps[]>({ url: LoveMsgURL.zaoan })
+    return res?.[0]
+  }
+
+  // 一言
+  async getOneWord() {
+    const res = await getTian2<OneWordProps[]>({ url: LoveMsgURL.oneWord })
     return res?.[0]
   }
 }

@@ -19,46 +19,35 @@ export const textTemplate = (data: TextTemplateProps2) => {
   let text = ''
 
   // 添加一句一言
-  if (oneWord) {
-    text += `
-『一言』${oneWord.hitokoto}\n`
-  }
-  if (saylove) {
-    text += `
-『土味情话』${saylove.content}\n`
-  }
-  if (skl) {
-    text += `
-『顺口溜』${skl.content}\n`
-  }
-  if (pyqwenan) {
-    text += `
-『朋友圈文案』${pyqwenan.content}\n`
-  }
-  if (oneMagazines) {
-    text += `
-『ONE杂志』${oneMagazines.word}\n`
-  }
-  if (hsjz) {
-    text += `
-『分手文案』${hsjz.content}\n`
-  }
-  if (dialogue) {
-    text += `
-『经典台词』${dialogue.dialogue}\n`
-  }
-  if (tiangou) {
-    text += `
-『舔狗』${tiangou.content}\n`
-  }
-  if (dujitang) {
-    text += `
-『毒鸡汤』${dujitang.content}\n`
-  }
-  if (wanan) {
-    text += `
-${wanan.content}\n`
-  }
+  if (oneWord)
+    text += `『一言』${oneWord.hitokoto}\n`
+
+  if (saylove)
+    text += `『土味情话』${saylove.content}\n`
+
+  if (skl)
+    text += `『顺口溜』${skl.content}\n`
+
+  if (pyqwenan)
+    text += `『朋友圈文案』${pyqwenan.content}\n`
+
+  if (oneMagazines)
+    text += `『每日一小句』${oneMagazines.word}\n`
+
+  if (hsjz)
+    text += `『分手文案』${hsjz.content}\n`
+
+  if (dialogue)
+    text += `『经典台词』${dialogue.dialogue}\n`
+
+  if (tiangou)
+    text += `『舔狗语录』${tiangou.content}\n`
+
+  if (dujitang)
+    text += `『毒鸡汤』${dujitang.content}\n`
+
+  if (wanan)
+    text += `晚安心语：${wanan.content}`
 
   return {
     msgtype: 'text',

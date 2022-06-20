@@ -174,6 +174,7 @@ type TextTemplateProps = {
   netEaseCloud: NetEaseCloudProps | null
   dayEnglish: ResEnglishProps | null
   zaoan: zaoanProps | null
+  oneWord: OneWordProps | null
 }
 // goodEvening
 type TextTemplateProps2 = {

@@ -37,16 +37,16 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
   // 拼接内容
   let description = `${area} | ${today} | ${week}`
 
-  if (CONFIG.date_lunarInfo && lunarInfo) {
-    const { festival, lunar_festival, jieqi, lubarmonth, lunarday } = lunarInfo
-    // 公历节日、农历节日和二十四节气
-    const festival_info = festival ? `| ${festival}` : ''
-    const lunar_festival_info = lunar_festival ? `| ${lunar_festival}` : ''
-    const jieqi_info = jieqi ? `| ${jieqi}` : ''
+  //   if (CONFIG.date_lunarInfo && lunarInfo) {
+  //     const { festival, lunar_festival, jieqi, lubarmonth, lunarday } = lunarInfo
+  //     // 公历节日、农历节日和二十四节气
+  //     const festival_info = festival ? `| ${festival}` : ''
+  //     const lunar_festival_info = lunar_festival ? `| ${lunar_festival}` : ''
+  //     const jieqi_info = jieqi ? `| ${jieqi}` : ''
 
-    description += ` ${festival_info}
-农历 | ${lubarmonth}${lunarday} ${lunar_festival_info} ${jieqi_info}`
-  }
+  //     description += ` ${festival_info}
+  // 农历 | ${lubarmonth}${lunarday} ${lunar_festival_info} ${jieqi_info}`
+  //   }
 
   description += `\n今日天气状况：
 天气：${weather}
