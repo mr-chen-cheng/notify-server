@@ -78,12 +78,12 @@ interface ResEnglishProps {
 }
 
 // 韩寒主编的ONE一个杂志，本接口返回每日一句
-// interface OneMagazines {
-//   word: string
-//   wordfrom: string
-//   imgurl: string
-//   note: string
-// }
+interface OneMagazines {
+  word: string
+  wordfrom: string
+  imgurl: string
+  note: string
+}
 
 // 故事大全
 interface StorybookProps {
@@ -108,6 +108,34 @@ interface ResLunarDateProps {
 
 // 土味情话
 interface SayloveProps {
+  content: string
+}
+interface sklProps {
+  content: string
+}
+interface pyqwenanProps {
+  content: string
+  source: string
+}
+interface hsjzProps {
+  content: string
+}
+interface dialogueProps {
+  dialogue: string
+  english: string
+  source: string
+  type: number
+}
+interface tiangouProps {
+  content: string
+}
+interface dujitangProps {
+  content: string
+}
+interface wananProps {
+  content: string
+}
+interface zaoanProps {
   content: string
 }
 
@@ -141,15 +169,27 @@ type TextCardTemplateProps = IWeatherResponseProps & {
   oneWord?: OneWordProps | null
 }
 
-// goodEvening
+// goodMorning
 type TextTemplateProps = {
-  sayLove: SayloveProps | null
   caiHongpi: SayloveProps | null
-  oneWord: OneWordProps | null
   songLyrics: IVerseProps | null
   tangshi: TangshiProps | null
   tangshi_songci: tangshi_songciProps | null
-  // oneMagazines: OneMagazines | null
   netEaseCloud: NetEaseCloudProps | null
   dayEnglish: ResEnglishProps | null
+  zaoan: zaoanProps | null
+}
+// goodEvening
+type TextTemplateProps2 = {
+  oneWord: OneWordProps | null
+  saylove: SayloveProps | null
+  oneMagazines: OneMagazines | null
+  skl: sklProps | null
+  pyqwenan: pyqwenanProps | null
+  hsjz: hsjzProps | null
+  dialogue: dialogueProps | null
+  tiangou: tiangouProps | null
+  dujitang: dujitangProps | null
+  wanan: wananProps | null
+  zaoan: zaoanProps | null
 }

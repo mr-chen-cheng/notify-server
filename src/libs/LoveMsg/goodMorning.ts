@@ -15,22 +15,21 @@ const goodWord = async () => {
   try {
     // 并行请求，优响相应
     const dataSource = await Promise.allSettled([
-      // API.getSaylove(), // 土味情话
       API.getCaihongpi(), // 彩虹屁
-      // API.getOneWord(), // 一言
       API.getSongLyrics(), // 最美宋词
       API.gettangshi_songci(), // 最美唐诗
       API.getTangShi(), // 最美唐诗
-      // API.getOneMagazines(), // one杂志
       API.getNetEaseCloud(), // 脑筋急转弯
       API.getDayEnglish(), // 每日英语
+      API.getZaoan(),
     ])
 
     // 过滤掉异常数据
-    const [caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish]
+    const [caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish, zaoan]
       = dataSource.map(n => (n.status === 'fulfilled' ? n.value : null))
     const data: any = {
       caiHongpi,
+      zaoan,
     }
     // 对象写法
     const data1: any = {

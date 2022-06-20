@@ -2,7 +2,7 @@ import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import axios from 'axios'
 import dotenv from 'dotenv'
 dotenv.config()
-const { TIAN_API_KEY } = process.env
+const { TIAN_API_KEY, TIAN_API_KEY2 } = process.env
 
 const instance = axios.create({
   withCredentials: true,
@@ -54,6 +54,15 @@ export function getTian<T = any>(
 ): Promise<T> {
   return request(
     { ...config, params: { ...(config.params || {}), key: TIAN_API_KEY }, method: 'GET' },
+    options,
+  )
+}
+export function getTian2<T = any>(
+  config: AxiosRequestConfig,
+  options?: AxiosRequestConfig,
+): Promise<T> {
+  return request(
+    { ...config, params: { ...(config.params || {}), key: TIAN_API_KEY2 }, method: 'GET' },
     options,
   )
 }

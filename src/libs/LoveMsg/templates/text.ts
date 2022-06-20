@@ -14,7 +14,7 @@ const weekMap: any = {
 }
 
 export const textTemplate = (data: TextTemplateProps) => {
-  const { caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish } = data
+  const { caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish, zaoan } = data
   let text = ''
   if (caiHongpi) {
     text += '早安呀！！！~'
@@ -33,7 +33,10 @@ export const textTemplate = (data: TextTemplateProps) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     text += `\n${caiHongpi.content}`
   }
-
+  if (zaoan) {
+    text += `
+${zaoan.content}\n`
+  }
   // 『生活小技巧』
   if (dayEnglish)
     text += `『生活小技巧』--${dayEnglish.content}\n`

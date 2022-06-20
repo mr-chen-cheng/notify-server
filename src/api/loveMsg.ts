@@ -1,5 +1,5 @@
 // import axios from 'axios'
-import { getTian } from '../utils/http'
+import { getTian, getTian2 } from '../utils/http'
 
 /**
  * 给女朋友发送内容的相关接口
@@ -37,6 +37,7 @@ enum LoveMsgURL {
   // 一言
   // oneWord = 'https://v1.hitokoto.cn/?encode=json',
   tiangou = 'http://api.tianapi.com/tiangou/index',
+  zaoan = 'http://api.tianapi.com/zaoan/index'
 }
 function randomPage() { // 随机数 1-40000
   return Math.ceil(Math.random() * 40000)
@@ -99,12 +100,6 @@ class API {
     return res?.[0]
   }
 
-  // // one一个杂志
-  // async getOneMagazines() {
-  //   const res = await getTian<OneMagazines[]>({ url: LoveMsgURL.oneMagazines })
-  //   return res?.[0]
-  // }
-
   // 故事大全
   async getStorybook() {
     const res = await getTian<StorybookProps[]>({ url: LoveMsgURL.storybook })
@@ -129,6 +124,11 @@ class API {
   // 彩虹屁
   async getCaihongpi() {
     const res = await getTian<SayloveProps[]>({ url: LoveMsgURL.caihongpi })
+    return res?.[0]
+  }
+
+  async getZaoan() {
+    const res = await getTian2<zaoanProps[]>({ url: LoveMsgURL.zaoan })
     return res?.[0]
   }
 }
