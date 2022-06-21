@@ -12,19 +12,19 @@ const getStory = async () => {
       API.getOneWord(), // 一言
       API.getSaylove(), // 土味情话
       API.getOneMagazines(), // one杂志
-      API.getSkl(),
+      // API.getSkl(),
       API.getPyqwenan(),
       API.getHsjz(),
-      API.getDialogue(),
+      // API.getDialogue(),
       API.getTiangou(),
       API.getDujitang(),
       API.getWanan(),
     ])
 
     // 过滤掉异常数据
-    const [oneWord, saylove, oneMagazines, skl, pyqwenan, hsjz, dialogue, tiangou, dujitang, wanan]
+    const [oneWord, saylove, oneMagazines, pyqwenan, hsjz, tiangou, dujitang, wanan]
       = dataSource.map(n => (n.status === 'fulfilled' ? n.value : null))
-    const data: any = { oneWord, saylove, oneMagazines, skl, pyqwenan, hsjz, dialogue, tiangou, dujitang, wanan }
+    const data: any = { oneWord, saylove, oneMagazines, pyqwenan, hsjz, tiangou, dujitang, wanan }
     const template = textTemplate(data)
     await wxNotify(template)
   }
