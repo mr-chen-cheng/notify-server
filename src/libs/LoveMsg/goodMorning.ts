@@ -15,12 +15,12 @@ const goodWord = async () => {
   try {
     // 并行请求，优响相应
     const dataSource = await Promise.allSettled([
-      API.getCaihongpi(), // 彩虹屁
-      API.getSongLyrics(), // 最美宋词
-      API.gettangshi_songci(), // 最美唐诗
-      API.getTangShi(), // 最美唐诗
-      API.getNetEaseCloud(), // 脑筋急转弯
-      API.getDayEnglish(), // 每日英语
+      API.getCaihongpi(),
+      API.getSongLyrics(),
+      API.gettangshi_songci(),
+      API.getTangShi(),
+      API.getNetEaseCloud(),
+      API.getDayEnglish(),
       API.getZaoan(),
       API.getOneWord(),
     ])
@@ -60,9 +60,10 @@ const goodWord = async () => {
 const weatherInfo = async () => {
   try {
     const weather = await API.getWeather(CONFIG.city_name)
+    const oneWord = await API.getOneWord()
     if (weather) {
       const lunarInfo = await API.getLunarDate(weather.date)
-      const template = textCardTemplate({ ...weather, lunarInfo })
+      const template = textCardTemplate({ ...weather, oneWord, lunarInfo })
       console.log('weatherInfo', template)
 
       // 发送消息
