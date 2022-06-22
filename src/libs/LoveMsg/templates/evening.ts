@@ -20,32 +20,32 @@ export const textTemplate = (data: TextTemplateProps2) => {
 
   // 添加一句一言
   if (oneWord)
-    text += ` ${oneWord.hitokoto}\n`
+    text += ` ${oneWord.hitokoto}\n `
 
   if (saylove)
-    text += ` ${saylove.content}\n`
+    text += ` ${saylove.content}\n `
 
   if (pyqwenan)
-    text += ` ${pyqwenan.content}\n`
+    text += ` ${pyqwenan.content}\n `
 
   if (oneMagazines)
-    text += ` ${oneMagazines.word}\n`
+    text += ` ${oneMagazines.word}\n `
 
   if (hsjz)
-    text += ` ${hsjz.content}\n`
+    text += ` ${hsjz.content}\n `
 
   // if (dialogue)
   //   text += `『${dialogue.source}』${dialogue.dialogue}\n`
 
   if (tiangou)
-    text += ` ${tiangou.content}\n`
+    text += ` ${tiangou.content}\n `
 
   if (dujitang)
-    text += ` ${dujitang.content}\n`
+    text += ` ${dujitang.content}\n `
   // if (skl)
   //   text += ` ${skl.content}\n`
   if (wanan)
-    text += ` ${wanan.content}`
+    text += ` ${wanan.content} `
 
   return {
     msgtype: 'text',

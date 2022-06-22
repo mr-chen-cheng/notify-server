@@ -23,7 +23,7 @@ export const textTemplate = (data: TextTemplateProps) => {
   const { caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish, zaoan, oneWord } = data
   let text = ''
   if (zaoan)
-    text += `${zaoan.content}`
+    text += ` ${zaoan.content} `
 
   if (caiHongpi) {
     // 工作日/休息日，需要排除节假日
@@ -38,11 +38,13 @@ export const textTemplate = (data: TextTemplateProps) => {
     嗯哼哼~今天可是${weekMap[date.getDay()]}哦，美好的一天开始了~`
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    text += `\n${caiHongpi.content}`
+    text += ` \n${caiHongpi.content} `
   }
+
   // 添加一句一言
   if (oneWord)
-    text += `『一言』${oneWord.hitokoto}\n`
+    text += ` 『一言』${oneWord.hitokoto}\n `
+
   // 『生活小技巧』
   if (dayEnglish)
     text += `『生活小技巧』--${dayEnglish.content}\n`
