@@ -21,9 +21,9 @@ if (curHours > 15) {
 }
 export const textTemplate = (data: TextTemplateProps) => {
   const { caiHongpi, songLyrics, tangshi_songci, tangshi, netEaseCloud, dayEnglish, zaoan, oneWord } = data
-  let text = ''
+  let text = '  '
   if (zaoan)
-    text += ` ${zaoan.content} `
+    text += `   ${zaoan.content} `
 
   if (caiHongpi) {
     // 工作日/休息日，需要排除节假日
@@ -47,7 +47,7 @@ export const textTemplate = (data: TextTemplateProps) => {
 
   // 『生活小技巧』
   if (dayEnglish)
-    text += `『生活小技巧』--${dayEnglish.content}\n`
+    text += `『生活小技巧』--${dayEnglish.content}\n `
 
   if (netEaseCloud)
     text += `『脑筋急转弯』--${netEaseCloud.quest}——${netEaseCloud.result}`

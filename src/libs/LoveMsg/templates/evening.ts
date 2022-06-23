@@ -8,19 +8,21 @@ export const textTemplate = (data: TextTemplateProps2) => {
     oneWord,
     saylove,
     oneMagazines,
-    // skl,
+    skl,
     pyqwenan,
     hsjz,
-    // dialogue,
+    dialogue,
     tiangou,
     dujitang,
     wanan,
   } = data
-  let text = ''
+  let text = ' '
 
   // 添加一句一言
-  if (oneWord)
-    text += ` ${oneWord.hitokoto}\n `
+  if (oneWord) {
+    text += `  
+    ${oneWord.hitokoto}\n `
+  }
 
   if (saylove)
     text += ` ${saylove.content}\n `
@@ -34,16 +36,18 @@ export const textTemplate = (data: TextTemplateProps2) => {
   if (hsjz)
     text += ` ${hsjz.content}\n `
 
-  // if (dialogue)
-  //   text += `『${dialogue.source}』${dialogue.dialogue}\n`
-
   if (tiangou)
     text += ` ${tiangou.content}\n `
 
   if (dujitang)
     text += ` ${dujitang.content}\n `
-  // if (skl)
-  //   text += ` ${skl.content}\n`
+
+  if (dialogue)
+    text += `  《${dialogue.source}》 ${dialogue.dialogue}\n `
+
+  if (skl)
+    text += ` ${skl.content}\n `
+
   if (wanan)
     text += ` ${wanan.content} `
 

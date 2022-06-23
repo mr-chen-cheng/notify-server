@@ -96,7 +96,7 @@ ${tips}\n`
       url: 'https://api.lovelive.tools/api/SweetNothings',
       //   url: 'https://v1.jinrishici.com/all.svg',
       // url: `${CONFIG.card_url}`, // 60s看世界
-      btntxt: '点我看一下',
+      btntxt: 'click me',
     },
   }
 }
