@@ -24,7 +24,6 @@ export default async function WXbot(msg: string) {
         text: {
           content: msg,
           mentioned_list: ['@all'], // 通知所有人或单个成员（支持ID和手机号）
-          // mentioned_mobile_list: ['@all'],
         },
       },
     })

@@ -3,15 +3,15 @@
  * https://open.work.weixin.qq.com/api/doc/90000/90135/90236
  */
 
-const weekMap: any = {
-  0: '星期天',
-  1: '星期一',
-  2: '星期二',
-  3: '星期三',
-  4: '星期四',
-  5: '星期五',
-  6: '星期六',
-}
+// const weekMap: any = {
+//   0: '星期天',
+//   1: '星期一',
+//   2: '星期二',
+//   3: '星期三',
+//   4: '星期四',
+//   5: '星期五',
+//   6: '星期六',
+// }
 const date = new Date()
 const curHours = date.getHours()
 const curDate = date.getDate()
