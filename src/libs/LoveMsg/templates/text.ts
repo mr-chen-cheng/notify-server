@@ -26,10 +26,10 @@ export const textTemplate = (data: TextTemplateProps) => {
     text += ` ${zaoan.content} `
 
   // 添加一句一言
-  if (oneWord)
-    text += `『一言』${oneWord.hitokoto}\n `
+  // if (oneWord)
+    // text += `『一言』${oneWord.hitokoto}\n `
 
-  if (caiHongpi) {
+  // if (caiHongpi) {
     // 工作日/休息日，需要排除节假日
     // if ([0, 6].includes(date.getDay())) {
     //   text += `
@@ -42,15 +42,15 @@ export const textTemplate = (data: TextTemplateProps) => {
     // 嗯哼哼~今天可是${weekMap[date.getDay()]}哦，美好的一天开始了~`
     // }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    text += ` \n${caiHongpi.content} `
-  }
+    // text += ` \n${caiHongpi.content} `
+  // }
 
   // 『生活小技巧』
-  if (dayEnglish)
-    text += `『生活小技巧』--${dayEnglish.content}\n `
+  // if (dayEnglish)
+  //   text += `『生活小技巧』--${dayEnglish.content}\n `
 
-  if (netEaseCloud)
-    text += `『脑筋急转弯』--${netEaseCloud.quest}——${netEaseCloud.result}`
+  // if (netEaseCloud)
+  //   text += `『脑筋急转弯』--${netEaseCloud.quest}——${netEaseCloud.result}`
 
   // 宋词
   if (songLyrics)
