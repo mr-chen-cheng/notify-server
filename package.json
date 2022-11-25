@@ -3,12 +3,6 @@
   "version": "0.0.1",
   "description": "使用TypeScript运行和开发的nodejs技术栈的微信消息通知项目",
   "keywords": [
-    "女朋友",
-    "微信",
-    "微信通知",
-    "土味情话",
-    "天气",
-    "早安"
   ],
   "homepage": "https://github.com/JS-banana/node-ts#readme",
   "bugs": {

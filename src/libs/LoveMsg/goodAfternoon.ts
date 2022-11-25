@@ -8,7 +8,7 @@ import { wxNotify } from '../WxNotify'
 export const goodAfternoon = async () => {
   // const res = await API.getJoke()
 
-  const text = '今日份午安来喽\n'
+  const text = ''
 
   //   text += `
   // 请欣赏以下雷人笑话😝\n`

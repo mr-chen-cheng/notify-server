@@ -86,7 +86,7 @@ ${tips}\n`
   // 内容末尾，自定义
   // description += ` `
 
-  const title = `这是我们相识的第 ${dateLength} 天`
+  const title = `今年已经过去 ${dateLength} 天`
 
   return {
     msgtype: 'textcard',
@@ -96,7 +96,7 @@ ${tips}\n`
       url: 'https://api.lovelive.tools/api/SweetNothings',
       //   url: 'https://v1.jinrishici.com/all.svg',
       // url: `${CONFIG.card_url}`, // 60s看世界
-      btntxt: 'click me',
+      btntxt: 'click',
     },
   }
 }

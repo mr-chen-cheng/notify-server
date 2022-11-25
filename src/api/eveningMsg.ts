@@ -1,5 +1,5 @@
 // import axios from 'axios'
-import { getTian2 } from '../utils/http'
+import { getTian, getTian2 } from '../utils/http'
 
 enum LoveMsgURL {
   // 韩寒主编的ONE一个杂志，本接口返回每日一句
@@ -14,6 +14,14 @@ enum LoveMsgURL {
   dujitang = 'http://api.tianapi.com/dujitang/index',
   wanan = 'http://api.tianapi.com/wanan/index',
   zaoan = 'http://api.tianapi.com/zaoan/index',
+   // 最美宋词
+   songLyrics = 'http://api.tianapi.com/zmsc/index',
+   // 唐诗
+   tangshi = 'http://api.tianapi.com/poetries/index',
+   tangshi_songci = 'http://api.tianapi.com/songci/index', // 宋词
+}
+function randomPage() { // 随机数 1-40000
+  return Math.ceil(Math.random() * 40000)
 }
 class API {
   key: string
@@ -23,6 +31,26 @@ class API {
 
   getKey() {
     return this.key
+  }
+
+  // 最美宋词
+  async getSongLyrics() {
+    const res = await getTian<IVerseProps[]>({ url: LoveMsgURL.songLyrics })
+    return res?.[0]
+  }
+
+  // 最美唐诗
+  async getTangShi() {
+    const res = await getTian<TangshiProps[]>({ url: LoveMsgURL.tangshi, params: { num: 1, page: randomPage() } })
+    // console.log(res)
+    return res?.[0]
+  }
+
+  // 最美唐诗
+  async gettangshi_songci() {
+    const res = await getTian<tangshi_songciProps[]>({ url: LoveMsgURL.tangshi_songci, params: { num: 1, page: randomPage() } })
+    // console.log(res)
+    return res?.[0]
   }
 
   // 一言

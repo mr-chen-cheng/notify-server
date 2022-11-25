@@ -176,17 +176,27 @@ type TextTemplateProps = {
   zaoan: zaoanProps | null
   oneWord: OneWordProps | null
 }
-// goodEvening
 type TextTemplateProps2 = {
-  oneWord: OneWordProps | null
-  saylove: SayloveProps | null
-  oneMagazines: OneMagazines | null
-  skl: sklProps | null
-  pyqwenan: pyqwenanProps | null
-  hsjz: hsjzProps | null
-  dialogue: dialogueProps | null
-  tiangou: tiangouProps | null
-  dujitang: dujitangProps | null
-  wanan: wananProps | null
-  zaoan: zaoanProps | null
+  // caiHongpi: SayloveProps | null
+  songLyrics: IVerseProps | null
+  tangshi: TangshiProps | null
+  tangshi_songci: tangshi_songciProps | null
+  // netEaseCloud: NetEaseCloudProps | null
+  // dayEnglish: ResEnglishProps | null
+  // zaoan: zaoanProps | null
+  // oneWord: OneWordProps | null
 }
+// goodEvening
+// type TextTemplateProps2 = {
+//   oneWord: OneWordProps | null
+//   saylove: SayloveProps | null
+//   oneMagazines: OneMagazines | null
+//   skl: sklProps | null
+//   pyqwenan: pyqwenanProps | null
+//   hsjz: hsjzProps | null
+//   dialogue: dialogueProps | null
+//   tiangou: tiangouProps | null
+//   dujitang: dujitangProps | null
+//   wanan: wananProps | null
+//   zaoan: zaoanProps | null
+// }
