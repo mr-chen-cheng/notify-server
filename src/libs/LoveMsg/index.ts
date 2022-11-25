@@ -21,14 +21,14 @@ export default function main() {
   //     goodAfternoon()
 
   //   else if (date.getHours() >= 21 && date.getHours() < 24)
-  goodEvening()
+  // goodEvening()
   // }
 
-  // if (MESSAGE_TYPE === 'goodAfternoon')
-  //   goodAfternoon()
+  if (MESSAGE_TYPE === 'goodAfternoon')
+    goodAfternoon()
 
-  // else if (MESSAGE_TYPE === 'goodEvening')
-  //   goodEvening()
-  // else if (MESSAGE_TYPE === 'goodMorning')
-  //   goodMorning()
+  else if (MESSAGE_TYPE === 'goodEvening')
+    goodEvening()
+  else if (MESSAGE_TYPE === 'goodMorning')
+    goodMorning()
 }
